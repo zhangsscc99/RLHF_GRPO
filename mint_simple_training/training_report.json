@@ -1,0 +1,34 @@
+{
+  "started_at": "2026-05-17T15:08:08.208931+00:00",
+  "base_url": "https://mint.macaron.xin/",
+  "base_model": "Qwen/Qwen3-0.6B",
+  "algorithm": "SFT / cross_entropy",
+  "lora_rank": 16,
+  "train_mlp": true,
+  "train_attn": true,
+  "train_unembed": true,
+  "dataset_examples": 2,
+  "steps_requested": 1,
+  "api_key": "provided via MINT_API_KEY (redacted)",
+  "training_client_created_at": "2026-05-17T15:08:11.042720+00:00",
+  "token_lengths": [
+    36,
+    12
+  ],
+  "forward_backward_metrics": {
+    "loss:mean": 4.544022623697916,
+    "num_samples:sum": 2.0,
+    "num_tokens:sum": 30.0
+  },
+  "forward_backward_loss": null,
+  "optim_step_result": "OptimStepResponse(metrics={'grad_norm:last': 385.7864074707031, 'step': 1.0})",
+  "step_completed_at": "2026-05-17T15:08:23.979025+00:00",
+  "saved_run_name": "codex-simple-sft-2026-05-17-v2",
+  "sample_prompt": "Q: 2 + 3 = ?\\nA:",
+  "sample_outputs": [
+    " 5\nOkay, let's see. The question is"
+  ],
+  "status": "completed",
+  "ended_at": "2026-05-17T15:08:35.442544+00:00",
+  "duration_sec": 27.23
+}

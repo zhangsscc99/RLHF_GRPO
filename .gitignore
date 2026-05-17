@@ -1,0 +1,13 @@
+# Python / local env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Logs and local reports that may include runtime details
+*.log
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
