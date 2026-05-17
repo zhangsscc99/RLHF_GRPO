@@ -1,23 +1,35 @@
 # RLHF / MinT training experiments
 
-This repo contains small MinT smoke tests and a minimal reproduction of the photographed FastApply pipeline.
-
-## Existing simple SFT
-
-`mint_simple_training/simple_mint_sft.py` runs a one-step MinT SFT sanity check.
+This repo contains MinT smoke tests and a code-level reproduction of the photographed FastApply pipeline.
 
 ## FastApply pipeline reproduction
 
-The 18 images describe an AI coding Apply model: given source code plus a patch, generate the fully updated source. This repo reproduces that flow with tiny test data first.
+The images describe a coding Apply model: given source code plus a patch, generate the fully updated source. The important correction is that the full pipeline is GRPO-based, not just SFT.
+
+Build the tiny test dataset:
 
 ```bash
-# build two tiny source+patch -> updated-source records
 ./mint_simple_training/.venv/bin/python -m fastapply_pipeline.build_dataset
-
-# run one MinT SFT smoke step on the supported 4B Qwen model
-export MINT_API_KEY='sk-...'
-export MINT_BASE_URL='https://mint.macaron.xin/'
-./mint_simple_training/.venv/bin/python -m fastapply_pipeline.train_mint_fastapply
 ```
 
-Default model: `Qwen/Qwen3-4B-Instruct-2507`. MinT docs list this 4B Qwen3 model; no Qwen3.5 4B identifier was found in the supported model page.
+Run the GRPO reproduction on MinT Qwen3 4B:
+
+```bash
+export MINT_API_KEY='sk-...'
+export MINT_BASE_URL='https://mint.macaron.xin/'
+export MINT_BASE_MODEL='Qwen/Qwen3-4B-Instruct-2507'
+./mint_simple_training/.venv/bin/python -m fastapply_pipeline.train_mint_fastapply_grpo --group-size 2 --include-oracle-rollout
+```
+
+Default model: `Qwen/Qwen3-4B-Instruct-2507`.
+
+## Modules
+
+- `patching.py`: SEARCH/REPLACE and structured patch replay.
+- `filters.py`: replay validation, syntax/AST checks, dedupe.
+- `ast_tools.py`: top-level scope analysis.
+- `rewards.py`: FastApply verifier reward.
+- `grpo.py`: group-relative advantages and `importance_sampling` Datum construction.
+- `train_mint_fastapply_grpo.py`: MinT GRPO training loop.
+
+`mint_simple_training/simple_mint_sft.py` and `fastapply_pipeline/train_mint_fastapply.py` remain as earlier SFT sanity checks, but the reproduced pipeline is `train_mint_fastapply_grpo.py`.

@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-05-17T17:52:23.125692+00:00",
+  "pipeline": "FastApply GRPO: source+patch -> sampled updated source -> verifier rewards -> centered advantages -> importance_sampling",
+  "base_url": "https://mint.macaron.xin/",
+  "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "algorithm": "GRPO / loss_fn=importance_sampling",
+  "lora_rank": 16,
+  "dataset_path": "/root/rlhf/data/fastapply_tiny_sft.jsonl",
+  "dataset_examples_used": 1,
+  "group_size_policy_samples": 1,
+  "include_oracle_rollout": true,
+  "api_key": "provided via MINT_API_KEY (redacted)",
+  "num_grpo_datums": 2,
+  "rollouts": [
+    {
+      "prompt_id": "py-search-replace-cache",
+      "text": "<updated>\ndef fetch_user(user_id, client, cache=None):\n    if cache is not None and user_id in cache:\n        return cache[user_id]\n    response = client.get(f\"/users/{user_id}\")\n    data = response.json()\n    if cache is not None:\n        cache[user_id] = data\n    return data\n</updated><|endoftext|>",
+      "reward": {
+        "total": 0.95,
+        "exact": 1.0,
+        "similarity": 1.0,
+        "tag_format": 1.0,
+        "no_extra_prose": 0.0,
+        "syntax": 1.0
+      },
+      "advantage": -0.025,
+      "token_count": 73
+    },
+    {
+      "prompt_id": "py-search-replace-cache",
+      "text": "<updated>\ndef fetch_user(user_id, client, cache=None):\n    if cache is not None and user_id in cache:\n        return cache[user_id]\n    response = client.get(f\"/users/{user_id}\")\n    data = response.json()\n    if cache is not None:\n        cache[user_id] = data\n    return data\n</updated>",
+      "reward": {
+        "total": 1.0,
+        "exact": 1.0,
+        "similarity": 1.0,
+        "tag_format": 1.0,
+        "no_extra_prose": 1.0,
+        "syntax": 1.0
+      },
+      "advantage": 0.025,
+      "token_count": 72
+    }
+  ],
+  "token_lengths": [
+    290,
+    289
+  ],
+  "forward_backward_metrics": {
+    "loss:mean": 0.0001722524906026906,
+    "num_samples:sum": 2.0,
+    "num_tokens:sum": 145.0,
+    "ratio:mean": 0.9999952912330627
+  },
+  "optim_step_result": "OptimStepResponse(metrics={'grad_norm:last': 17516.17578125, 'step': 1.0})",
+  "step_completed_at": "2026-05-17T18:32:16.046972+00:00",
+  "saved_run_name": "fastapply-grpo-qwen3-4b-tiny-2026-05-17-v2",
+  "post_grpo_sample": [
+    "<updated>\ndef fetch_user(user_id, client, cache=None):\n    if cache is not None and user_id in cache:\n        return cache[user_id]\n    response = client.get(f\"/users/{user_id}\")\n    data = response.json()\n    if cache is not None:\n        cache[user_id] = data\n    return data\n</updated><|endoftext|>"
+  ],
+  "status": "completed",
+  "ended_at": "2026-05-17T18:32:56.526561+00:00",
+  "duration_sec": 2433.4
+}

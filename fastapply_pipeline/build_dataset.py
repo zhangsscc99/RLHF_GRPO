@@ -7,6 +7,7 @@ from pathlib import Path
 from fastapply_pipeline.schemas import ApplyExample, SFTRecord
 from fastapply_pipeline.templates import build_prompt, build_response
 from fastapply_pipeline.test_data import tiny_apply_examples
+from fastapply_pipeline.filters import filter_examples
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -41,7 +42,8 @@ def write_jsonl(path: Path, rows: list[dict]) -> None:
 
 
 def main() -> int:
-    examples = tiny_apply_examples()
+    raw_examples = tiny_apply_examples()
+    examples, filter_report = filter_examples(raw_examples)
     for ex in examples:
         validate_example(ex)
     records = [to_sft_record(ex) for ex in examples]
@@ -52,6 +54,7 @@ def main() -> int:
         "sft_path": str(SFT_PATH),
         "num_examples": len(examples),
         "ids": [ex.id for ex in examples],
+        "filter_report": {"kept": filter_report.kept, "rejected": filter_report.rejected},
     }, ensure_ascii=False, indent=2))
     return 0
 
