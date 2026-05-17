@@ -1,0 +1,36 @@
+{
+  "started_at": "2026-05-17T16:39:45.873473+00:00",
+  "pipeline": "FastApply source+patch -> updated source",
+  "base_url": "https://mint.macaron.xin/",
+  "requested_model_note": "Using the MinT-supported Qwen3 4B model: Qwen/Qwen3-4B-Instruct-2507.",
+  "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "algorithm": "SFT / cross_entropy",
+  "lora_rank": 16,
+  "dataset_path": "/root/rlhf/data/fastapply_tiny_sft.jsonl",
+  "dataset_examples": 2,
+  "record_ids": [
+    "py-search-replace-cache",
+    "js-structured-add-guard"
+  ],
+  "steps_requested": 1,
+  "api_key": "provided via MINT_API_KEY (redacted)",
+  "token_lengths": [
+    289,
+    236
+  ],
+  "forward_backward_metrics": {
+    "loss:mean": 9.436356393914474e-06,
+    "num_samples:sum": 2.0,
+    "num_tokens:sum": 114.0
+  },
+  "optim_step_result": "OptimStepResponse(metrics={'grad_norm:last': 0.18731829524040222, 'step': 1.0})",
+  "step_completed_at": "2026-05-17T16:52:28.454148+00:00",
+  "saved_run_name": "fastapply-qwen3-4b-tiny-2026-05-17-v2",
+  "sample_record_id": "py-search-replace-cache",
+  "sample_outputs": [
+    "<updated>\ndef fetch_user(user_id, client, cache=None):\n    if cache is not None and user_id in cache:\n        return cache[user_id]\n    response = client.get(f\"/users/{user_id}\")\n    data = response.json()\n    if cache is not None:\n        cache[user_id] = data\n    return data\n</updated><|endoftext|>"
+  ],
+  "status": "completed",
+  "ended_at": "2026-05-17T16:53:09.616616+00:00",
+  "duration_sec": 803.74
+}
