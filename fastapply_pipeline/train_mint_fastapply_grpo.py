@@ -19,7 +19,7 @@ from typing import Any
 import mint
 from mint import types
 
-from fastapply_pipeline.build_dataset import SFT_PATH, main as build_dataset
+from fastapply_pipeline.build_dataset import PROMPT_PATH, main as build_dataset
 from fastapply_pipeline.grpo import build_grpo_datums_for_group
 from fastapply_pipeline.templates import build_response
 
@@ -34,9 +34,9 @@ def now_iso() -> str:
 
 
 def load_records() -> list[dict[str, Any]]:
-    if not SFT_PATH.exists():
+    if not PROMPT_PATH.exists():
         build_dataset()
-    return [json.loads(line) for line in SFT_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
+    return [json.loads(line) for line in PROMPT_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def main() -> int:
@@ -56,7 +56,7 @@ def main() -> int:
         "base_model": BASE_MODEL,
         "algorithm": "GRPO / loss_fn=importance_sampling",
         "lora_rank": 16,
-        "dataset_path": str(SFT_PATH),
+        "dataset_path": str(PROMPT_PATH),
         "dataset_examples_used": len(records),
         "group_size_policy_samples": args.group_size,
         "include_oracle_rollout": args.include_oracle_rollout,

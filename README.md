@@ -4,7 +4,7 @@ This repo contains MinT smoke tests and a code-level reproduction of the photogr
 
 ## FastApply pipeline reproduction
 
-The images describe a coding Apply model: given source code plus a patch, generate the fully updated source. The important correction is that the full pipeline is GRPO-based, not just SFT.
+The images describe a coding Apply model: given source code plus a patch, generate the fully updated source. The reproduced training pipeline here is GRPO-based.
 
 Build the tiny test dataset:
 
@@ -32,4 +32,4 @@ Default model: `Qwen/Qwen3-4B-Instruct-2507`.
 - `grpo.py`: group-relative advantages and `importance_sampling` Datum construction.
 - `train_mint_fastapply_grpo.py`: MinT GRPO training loop.
 
-`mint_simple_training/simple_mint_sft.py` and `fastapply_pipeline/train_mint_fastapply.py` remain as earlier SFT sanity checks, but the reproduced pipeline is `train_mint_fastapply_grpo.py`.
+The reproduced pipeline entrypoint is `fastapply_pipeline/train_mint_fastapply_grpo.py`.

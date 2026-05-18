@@ -21,7 +21,7 @@ class ApplyExample:
 
 
 @dataclass(frozen=True)
-class SFTRecord:
+class ApplyPromptRecord:
     id: str
     prompt: str
     response: str

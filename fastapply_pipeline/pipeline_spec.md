@@ -1,6 +1,6 @@
 # FastApply pipeline reproduction notes
 
-This project recreates the 18-image FastApply training pipeline as code, not only as a one-step SFT demo.
+This project recreates the 18-image FastApply training pipeline as code, as the actual GRPO pipeline.
 
 ## Page-by-page mapping from the images
 
@@ -27,7 +27,7 @@ This project recreates the 18-image FastApply training pipeline as code, not onl
 - `rewards.py`: FastApply verifier reward: exact updated source, similarity, tag format, no extra prose, syntax validity.
 - `grpo.py`: group reward centering and MinT `types.Datum` construction with `weights`, `logprobs`, and `advantages`.
 - `train_mint_fastapply_grpo.py`: actual MinT GRPO loop using `loss_fn="importance_sampling"`.
-- `train_mint_fastapply.py`: SFT warmup/sanity path kept for comparison only.
+- `train_mint_fastapply.py`: legacy warmup path removed; GRPO is the reproduced pipeline.
 
 ## GRPO flow
 

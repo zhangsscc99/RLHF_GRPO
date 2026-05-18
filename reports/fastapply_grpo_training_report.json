@@ -5,7 +5,7 @@
   "base_model": "Qwen/Qwen3-4B-Instruct-2507",
   "algorithm": "GRPO / loss_fn=importance_sampling",
   "lora_rank": 16,
-  "dataset_path": "/root/rlhf/data/fastapply_tiny_sft.jsonl",
+  "dataset_path": "/root/rlhf/data/fastapply_tiny_prompts.jsonl",
   "dataset_examples_used": 1,
   "group_size_policy_samples": 1,
   "include_oracle_rollout": true,
