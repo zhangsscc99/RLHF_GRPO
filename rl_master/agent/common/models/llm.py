@@ -37,12 +37,16 @@ class LLM:
         self._http_client = http_client
 
     async def chat(self, messages: List[Dict[str, Any]], temperature: float = 0.7, top_p: float = 0.95, top_k: int = 20, max_completion_tokens: Optional[int] = None, enable_thinking: Optional[bool] = None, num: int = 1, use_speculative_decoding: bool = False, do_sample: bool = False, **kwargs: Any) -> List[str]:
-        # deterministic local fallback: enough for smoke tests without a model server
+        # Deterministic local fallback: enough for smoke tests without a model server.
+        offline_local = self._api_key == "EMPTY" and ("localhost" in self._base_url or "127.0.0.1" in self._base_url)
         user = messages[-1]["content"] if messages else ""
-        if "<updated>" in user or "<patch>" in user:
+        if offline_local and ("<updated>" in user or "<patch>" in user):
             return ["<updated>\n" + _apply_prompt_heuristic(user) + "\n</updated>"]
-        if "verdict" in user or "PASS" in user:
-            return ['{"verdict":"' + _judge_prompt_heuristic(user) + '"}']
+        if offline_local and ("verdict" in user or "PASS" in user or "judgement" in user):
+            verdict = _judge_prompt_heuristic(user)
+            if "judgement" in user:
+                return ['{"judgement":"' + ("Yes" if verdict == "PASS" else "No") + '"}']
+            return ['{"verdict":"' + verdict + '"}']
         if httpx is None:
             return [""]
         payload = {"model": self._name, "messages": messages, "temperature": temperature, "top_p": top_p, "n": num}

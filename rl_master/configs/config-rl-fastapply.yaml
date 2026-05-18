@@ -1,36 +1,176 @@
 defaults:
   - ./config/deepspeed_zero3_here
   - ./config/deepspeed_zero3_cpuoffload_here
+  - ./config/deepspeed_zero2_here
+  - ./config/deepspeed_zero3_cpuoffload_here
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+exp_name: fastapply
+seed: 42
+sequence_length: 8192
+logging_dir: ./output/${exp_name}/logs
+output_dir: ./output/${exp_name}
+render_save_dir: ./output/${exp_name}/render
+system_envs:
+  SWANLAB_API_KEY: None
+  SWANLAB_MODE: local
+
+tracker: swanlab
+tracker_kwargs:
+  log_dir: /home/ma-user/work/data/swanlab/fast-apply
+  project: fast-apply
+  name: fast-apply
+  tags: [RDL, RLVR]
+
+checkpoint_config:
+  type: file_system
+  output_dir: /home/ma-user/work/data/rl/models/${exp_name}
 
 run:
   exp_name: fastapply
   seed: 42
   max_steps: 500
   save_steps: 10
+  logging_steps: 1
   eval_steps: 2
+  resume_from_checkpoint: false
+
+data:
+  train_files: /home/ma-user/work/datasets/fastapply/train_with_verl.parquet
+  val_files: /home/ma-user/work/datasets/fastapply/test_with_verl.parquet
+  train_batch_size: 32
+  val_batch_size: 512
+  max_prompt_length: 8384
+  max_response_length: 8000
+  max_sequence_length: 16384
+  filter_overlong_prompts: true
+  filter_overlong_prompts_workers: 16
+  truncate: error
+  shuffle: true
 
 rollout:
   rollout_batch_size: 256
   val_batch_size: 512
   sequence_length: 8192
   n: 8
+  num_return_sequences: 8
   temperature: 0.99
   top_p: 0.99
   top_k: 50
+  gpu_memory_utilization: 0.85
+  tensor_model_parallel_size: 8
+  block_size: 16
+  load_format: auto
+  enable_chunked_prefill: true
+  enable_prefix_caching: true
+  enforce_eager: false
+  disable_log_stats: false
+
+algorithm:
+  adv_estimator: grpo
+  use_kl_in_reward: false
+  whiten_advantages: true
+  adv_clip: 2.0
+  dual_clip_loss: true
+  use_kl_loss: true
+  kl_loss_coef: 0.05
+  kl_loss_type: low_var_kl
+  entropy_coeff: 0.001
 
 actor_train:
-  learning_rate: 1.0e-6
-  per_device_train_batch_size: 1
-  gradient_accumulation_steps: 64
-  warmup_ratio: 0.2
-  lr_scheduler_type: cosine
+  model_args:
+    flash_attn: fa2
+    disable_gradient_checkpointing: false
+    dtype: bf16
+    model_type: qwen3
+  training_args:
+    learning_rate: 1.0e-6
+    weight_decay: 0.0
+    per_device_train_batch_size: 1
+    gradient_accumulation_steps: 64
+    warmup_ratio: 0.2
+    lr_scheduler_type: cosine
+    strategy_name: deepspeed_train
+    strategy_config: ${deepspeed_zero3_cpuoffload}
+    device_mapping: list(range(0,4))
   strategy_name: deepspeed_train
   offload: true
 
+actor_infer:
+  model_args:
+    flash_attn: fa2
+    disable_gradient_checkpointing: true
+    dtype: bf16
+  infer_batch_size: 1
+  strategy_name: vllm
+  strategy_config:
+    gpu_memory_utilization: 0.85
+    max_model_len: ${sequence_length}
+    block_size: 16
+    load_format: auto
+    enable_prefix_caching: true
+    enable_sleep_mode: false
+    device_mapping: list(range(4,6))
+
 reference:
+  model_args:
+    flash_attn: fa2
+    disable_gradient_checkpointing: true
+    dtype: bf16
   strategy_name: hf_infer
+  strategy_config:
+    device_mapping: list(range(6,8))
   infer_batch_size: 1
 
 reward_normalization:
   grouping: traj_group_id
   method: mean_std
+
+train_env_manager:
+  max_env_num_per_worker: 16
+  num_env_groups: 32
+  group_size: 8
+  tags: [fast_apply_train]
+  num_groups_partition: [32]
+
+val_env_manager:
+  max_env_num_per_worker: 8
+  num_env_groups: 512
+  group_size: 1
+  tags: [fast_apply_val]
+  num_groups_partition: [512]
+
+custom_envs:
+  fast_apply_train:
+    env_type: FastApply
+    max_steps: 1
+    max_tokens_per_step: ${sequence_length}
+    env_manager_cls: agent.environment.manager.GlobalDatasetManager
+    use_thread_lock: true
+    history_length: 0
+    agent_system_template: ${agent_system_template}
+    agent_template: ${agent_template}
+    env_config:
+      path: /home/ma-user/work/datasets/train.parquet
+      is_train: true
+  fast_apply_val:
+    env_type: FastApply
+    max_steps: 1
+    max_tokens_per_step: ${sequence_length}
+    env_manager_cls: agent.environment.manager.GlobalDatasetManager
+    use_thread_lock: true
+    history_length: 0
+    agent_system_template: ${agent_system_template}
+    agent_template: ${agent_template}
+    env_config:
+      path: /home/ma-user/work/datasets/test.parquet
+      is_train: false
+
+custom_reward_path: pkg://applications.fastapply.reward.score
+custom_reward_name: compute_score
+reward_model:
+  reward_manager: batch

@@ -10,11 +10,13 @@
   "info": {
     "metrics": {
       "action_is_valid": true,
-      "success": true
+      "success": true,
+      "correctness": 1.0
     },
     "metrics_agg_mode": {
       "action_is_valid": "last",
-      "success": "last"
+      "success": "last",
+      "correctness": "last"
     }
   }
 }

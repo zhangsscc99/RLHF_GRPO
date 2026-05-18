@@ -17,24 +17,50 @@ except Exception:  # pragma: no cover - the smoke path should not require extern
             return cls(rows)
 
 
+async def _parallel_process(dataset: Dataset, function: Callable[[Dict[str, Any]], Any], max_process: int = 8) -> Dataset:
+    sem = asyncio.Semaphore(max(1, max_process))
+
+    async def run_one(item):
+        async with sem:
+            result = function(dict(item))
+            if asyncio.iscoroutine(result):
+                result = await result
+            return result
+
+    rows = await asyncio.gather(*(run_one(item) for item in dataset))
+    return Dataset.from_list(list(rows))
+
+
 class InferencePipeline:
-    def __init__(self, agent: Agent, check: Optional[Callable[[Dataset], bool]] = None, preprocess: Optional[Callable[[Dict[str, Any]], Dict[str, Any]]] = None, postprocess: Optional[Callable[[Dict[str, Any]], Dict[str, Any]]] = None):
+    def __init__(
+        self,
+        agent: Agent,
+        check: Optional[Callable[[Dataset], bool]] = None,
+        preprocess: Optional[Callable[[Dict[str, Any]], Dict[str, Any]]] = None,
+        postprocess: Optional[Callable[[Dict[str, Any]], Dict[str, Any]]] = None,
+        max_process: int = 8,
+    ):
         self._agent = agent
         self._check = check
         self._preprocess = preprocess
         self._postprocess = postprocess
+        self._max_process = max_process
 
     async def __call__(self, dataset: Dataset) -> Dataset:
-        rows = []
-        for item in dataset:
+        if self._check is not None and not self._check(dataset):
+            raise RuntimeError("The dataset does not meet the check condition")
+        if self._preprocess is not None:
+            dataset = await _parallel_process(dataset, self._preprocess, self._max_process)
+
+        async def process(item: Dict[str, Any]):
             data = dict(item)
-            if self._preprocess:
-                data = self._preprocess(data)
             data["result"] = await self._agent.run(data)
-            if self._postprocess:
-                data = self._postprocess(data)
-            rows.append(data)
-        return Dataset.from_list(rows)
+            return data
+
+        dataset = await _parallel_process(dataset, process, self._max_process)
+        if self._postprocess is not None:
+            dataset = await _parallel_process(dataset, self._postprocess, self._max_process)
+        return dataset
 
 
 class Evaluator:

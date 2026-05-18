@@ -102,3 +102,17 @@
 3. **Loss 结构**：policy surrogate 使用 old/current logprob ratio 和 advantage；同时保留 ref policy 的 KL 惩罚与 entropy bonus。真实 MinT 训练入口用 `forward_backward(datums, loss_fn="importance_sampling")`。
 4. **LoRA 位置**：真实 MinT 入口创建 `create_lora_training_client(... rank=16, train_mlp=True, train_attn=True, train_unembed=True)`，对应插在 Qwen3 4B transformer 的 attention、MLP 和 unembed 相关线性层上。
 5. **数据策略**：当前只放 1-2 条 tiny test 数据用于能跑通，不虚构大数据集；后续可把真实 FastApply 样本喂给同样入口。
+
+## 2026-05-18 二次源码审计补齐
+
+本轮重新对照 72 张图后，补齐了此前简化版本缺少的细节：
+
+- 新增 `rl_master/scripts/run-fastapply-ver1.sh`，复刻图中的 shell 入口参数。
+- 新增 `rl_master/agent/trainer/grpo.py`，把 group advantage、ratio clip、dual clip、low_var_kl、entropy loss 模块化。
+- 扩展 `config-rl-fastapply.yaml` 至图中 verl/DeepSpeed/vLLM/env manager 风格字段。
+- 新增 `rl_master/agent/environment/manager.py`，FastApply 环境支持从 JSON/JSONL/Parquet 读 tiny/真实样本。
+- 扩展 apply/generate/judge prompt，包含 diff 分类、JSON verdict 和严格 updated 输出协议。
+- 扩展 evaluation pipeline：并发 preprocess/inference/postprocess、LLM judge/test strategy、JSONPath-like visit。
+- 更新 smoke 报告和测试，确认 shell、GRPO、reward、evaluation 全部可运行。
+
+详细审计见 `reports/rl_master_pipeline_completion_audit.md`。

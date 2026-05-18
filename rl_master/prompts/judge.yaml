@@ -16,4 +16,20 @@
     Diff View:
     {{ diff }}
 
-    Return JSON only: {"verdict":"PASS"} if equivalent, otherwise {"verdict":"FAIL"}.
+    Task:
+    1. Classify meaningful differences into:
+       - "Purely Non-Semantic Diffs" such as formatting, whitespace, comments, blank lines or harmless renames.
+       - "Potentially Non-Semantic Diffs" where equivalence depends on context.
+       - "Clear Semantic/Behavioral Diffs" such as changed control flow, conditions, return values, exceptions or API behavior.
+    2. Decide equivalence for the action:
+       - PASS: candidate is equivalent to reference for the applied patch.
+       - FAIL: otherwise.
+
+    Return valid JSON only:
+    {
+      "diffs": [
+        {"category": "Purely Non-Semantic|Potentially Non-Semantic|Clear Semantic/Behavioral", "equivalence": "Equivalent|Not Equivalent|Uncertain", "description": "brief"}
+      ],
+      "summary": "one sentence",
+      "verdict": "PASS|FAIL"
+    }

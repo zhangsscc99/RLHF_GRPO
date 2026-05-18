@@ -2,12 +2,23 @@
   "pipeline": "RL-master FastApply GRPO smoke: data -> rollout(n=8) -> reward -> group advantage -> policy/KL/entropy loss",
   "model_target": "Qwen/Qwen3-4B-Instruct-2507 for MinT; offline smoke uses deterministic sampler",
   "config": {
+    "adv_estimator": "grpo",
+    "reward_grouping": "traj_group_id",
+    "reward_normalization": "mean_std",
+    "whiten_advantages": true,
+    "adv_clip": 2.0,
+    "clip_ratio": 0.2,
+    "dual_clip_loss": true,
+    "dual_clip_lower_bound": 3.0,
+    "use_kl_loss": true,
+    "kl_loss_coef": 0.02,
+    "kl_loss_type": "low_var_kl",
+    "entropy_coeff": 0.001,
     "rollout_n": 8,
     "sequence_length": 8192,
     "temperature": 0.99,
     "top_p": 0.99,
-    "top_k": 50,
-    "adv_estimator": "grpo"
+    "top_k": 50
   },
   "prompt_observation_keys": [
     "language",
@@ -16,9 +27,17 @@
   ],
   "reward_formula": "reward = 0.8 * rule_or_judge_correctness + 0.2 * valid_updated_output",
   "advantage_formula": "adv_i = (reward_i - mean(group_rewards)) / std(group_rewards)",
-  "loss_formula": "total = clipped_policy_surrogate + beta_kl * KL(policy||ref) - entropy_coef * entropy",
+  "loss_formula": "total = clipped_policy_surrogate + beta_kl * low_var_KL(policy||ref) - entropy_coef * entropy",
   "mean_reward": 0.35,
-  "mean_loss": -0.030613640671246604,
+  "loss_summary": {
+    "reward/mean": 0.35,
+    "advantage/mean": 8.326672684688674e-17,
+    "ratio/mean": 0.9979667790740725,
+    "policy_loss/mean": -0.0300717344205087,
+    "kl_loss/mean": 1.5593749262080017e-05,
+    "entropy_loss/mean": -0.0005575,
+    "total_loss/mean": -0.030613640671246604
+  },
   "rollouts": [
     {
       "index": 0,
@@ -26,15 +45,19 @@
       "rule_correctness": 1.0,
       "validity": 1.0,
       "reward": 1.0,
-      "advantage": 1.6924558427507104,
-      "old_logprob": -0.45,
-      "new_logprob": -0.4,
-      "ref_logprob": -0.5,
-      "token_count": 11,
-      "policy_loss": -1.7792299093765471,
-      "kl_loss": 9.674836071919214e-05,
-      "entropy_bonus": 0.0004,
-      "total_loss": -1.7795331610158278
+      "loss": {
+        "prompt_id": "tiny-add",
+        "traj_group_id": "tiny-add",
+        "reward": 1.0,
+        "advantage": 1.6924558427507104,
+        "ratio": 1.0512710963760241,
+        "clipped_ratio": 1.0512710963760241,
+        "policy_loss": -1.7792299093765471,
+        "kl_loss": 9.674836071919214e-05,
+        "entropy_loss": -0.0004,
+        "total_loss": -1.7795331610158278,
+        "token_count": 11
+      }
     },
     {
       "index": 1,
@@ -42,15 +65,19 @@
       "rule_correctness": 0.0,
       "validity": 1.0,
       "reward": 0.2,
-      "advantage": -0.3905667329424715,
-      "old_logprob": -0.48,
-      "new_logprob": -0.5,
-      "ref_logprob": -0.52,
-      "token_count": 9,
-      "policy_loss": 0.38283299346796434,
-      "kl_loss": 3.973466135107628e-06,
-      "entropy_bonus": 0.0005,
-      "total_loss": 0.38233696693409946
+      "loss": {
+        "prompt_id": "tiny-add",
+        "traj_group_id": "tiny-add",
+        "reward": 0.2,
+        "advantage": -0.3905667329424715,
+        "ratio": 0.9801986733067553,
+        "clipped_ratio": 0.9801986733067553,
+        "policy_loss": 0.38283299346796434,
+        "kl_loss": 3.973466135107628e-06,
+        "entropy_loss": -0.0005,
+        "total_loss": 0.38233696693409946,
+        "token_count": 9
+      }
     },
     {
       "index": 2,
@@ -58,15 +85,19 @@
       "rule_correctness": 0.0,
       "validity": 1.0,
       "reward": 0.2,
-      "advantage": -0.3905667329424715,
-      "old_logprob": -0.51,
-      "new_logprob": -0.53,
-      "ref_logprob": -0.54,
-      "token_count": 14,
-      "policy_loss": 0.38283299346796434,
-      "kl_loss": 9.966749833623113e-07,
-      "entropy_bonus": 0.0005300000000000001,
-      "total_loss": 0.38230399014294775
+      "loss": {
+        "prompt_id": "tiny-add",
+        "traj_group_id": "tiny-add",
+        "reward": 0.2,
+        "advantage": -0.3905667329424715,
+        "ratio": 0.9801986733067553,
+        "clipped_ratio": 0.9801986733067553,
+        "policy_loss": 0.38283299346796434,
+        "kl_loss": 9.966749833623113e-07,
+        "entropy_loss": -0.0005300000000000001,
+        "total_loss": 0.38230399014294775,
+        "token_count": 14
+      }
     },
     {
       "index": 3,
@@ -74,15 +105,19 @@
       "rule_correctness": 0.0,
       "validity": 0.0,
       "reward": 0.0,
-      "advantage": -0.911322376865767,
-      "old_logprob": -0.54,
-      "new_logprob": -0.56,
-      "ref_logprob": -0.56,
-      "token_count": 9,
-      "policy_loss": 0.8932769847585836,
-      "kl_loss": 0.0,
-      "entropy_bonus": 0.0005600000000000001,
-      "total_loss": 0.8927169847585836
+      "loss": {
+        "prompt_id": "tiny-add",
+        "traj_group_id": "tiny-add",
+        "reward": 0.0,
+        "advantage": -0.911322376865767,
+        "ratio": 0.9801986733067553,
+        "clipped_ratio": 0.9801986733067553,
+        "policy_loss": 0.8932769847585836,
+        "kl_loss": 0.0,
+        "entropy_loss": -0.0005600000000000001,
+        "total_loss": 0.8927169847585836,
+        "token_count": 9
+      }
     },
     {
       "index": 4,
@@ -90,15 +125,19 @@
       "rule_correctness": 0.0,
       "validity": 1.0,
       "reward": 0.2,
-      "advantage": -0.3905667329424715,
-      "old_logprob": -0.5700000000000001,
-      "new_logprob": -0.5900000000000001,
-      "ref_logprob": -0.58,
-      "token_count": 11,
-      "policy_loss": 0.38283299346796434,
-      "kl_loss": 1.0033416833632457e-06,
-      "entropy_bonus": 0.0005900000000000001,
-      "total_loss": 0.3822439968096477
+      "loss": {
+        "prompt_id": "tiny-add",
+        "traj_group_id": "tiny-add",
+        "reward": 0.2,
+        "advantage": -0.3905667329424715,
+        "ratio": 0.9801986733067553,
+        "clipped_ratio": 0.9801986733067553,
+        "policy_loss": 0.38283299346796434,
+        "kl_loss": 1.0033416833632457e-06,
+        "entropy_loss": -0.0005900000000000001,
+        "total_loss": 0.3822439968096477,
+        "token_count": 11
+      }
     },
     {
       "index": 5,
@@ -106,15 +145,19 @@
       "rule_correctness": 0.0,
       "validity": 1.0,
       "reward": 0.2,
-      "advantage": -0.3905667329424715,
-      "old_logprob": -0.6,
-      "new_logprob": -0.62,
-      "ref_logprob": -0.6,
-      "token_count": 13,
-      "policy_loss": 0.38283299346796434,
-      "kl_loss": 4.026800535115171e-06,
-      "entropy_bonus": 0.00062,
-      "total_loss": 0.38221702026849946
+      "loss": {
+        "prompt_id": "tiny-add",
+        "traj_group_id": "tiny-add",
+        "reward": 0.2,
+        "advantage": -0.3905667329424715,
+        "ratio": 0.9801986733067553,
+        "clipped_ratio": 0.9801986733067553,
+        "policy_loss": 0.38283299346796434,
+        "kl_loss": 4.026800535115171e-06,
+        "entropy_loss": -0.00062,
+        "total_loss": 0.38221702026849946,
+        "token_count": 13
+      }
     },
     {
       "index": 6,
@@ -122,15 +165,19 @@
       "rule_correctness": 0.0,
       "validity": 0.0,
       "reward": 0.0,
-      "advantage": -0.911322376865767,
-      "old_logprob": -0.63,
-      "new_logprob": -0.65,
-      "ref_logprob": -0.62,
-      "token_count": 2,
-      "policy_loss": 0.8932769847585836,
-      "kl_loss": 9.090679070338226e-06,
-      "entropy_bonus": 0.0006500000000000001,
-      "total_loss": 0.8926360754376539
+      "loss": {
+        "prompt_id": "tiny-add",
+        "traj_group_id": "tiny-add",
+        "reward": 0.0,
+        "advantage": -0.911322376865767,
+        "ratio": 0.9801986733067553,
+        "clipped_ratio": 0.9801986733067553,
+        "policy_loss": 0.8932769847585836,
+        "kl_loss": 9.090679070338226e-06,
+        "entropy_loss": -0.0006500000000000001,
+        "total_loss": 0.8926360754376539,
+        "token_count": 2
+      }
     },
     {
       "index": 7,
@@ -138,15 +185,19 @@
       "rule_correctness": 1.0,
       "validity": 1.0,
       "reward": 1.0,
-      "advantage": 1.6924558427507104,
-      "old_logprob": -0.66,
-      "new_logprob": -0.61,
-      "ref_logprob": -0.64,
-      "token_count": 11,
-      "policy_loss": -1.7792299093765471,
-      "kl_loss": 8.910670970161406e-06,
-      "entropy_bonus": 0.00061,
-      "total_loss": -1.779830998705577
+      "loss": {
+        "prompt_id": "tiny-add",
+        "traj_group_id": "tiny-add",
+        "reward": 1.0,
+        "advantage": 1.6924558427507104,
+        "ratio": 1.0512710963760241,
+        "clipped_ratio": 1.0512710963760241,
+        "policy_loss": -1.7792299093765471,
+        "kl_loss": 8.910670970161406e-06,
+        "entropy_loss": -0.00061,
+        "total_loss": -1.779830998705577,
+        "token_count": 11
+      }
     }
   ],
   "image_reference_count": 72

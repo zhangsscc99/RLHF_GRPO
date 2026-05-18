@@ -24,13 +24,18 @@ async def compute_score_on_batch(languages: List[str], references: List[str], ca
             return 0.0
         if compare(reference, candidate):
             return 1.0
-        data = {"language": language, "reference": reference, "candidate": candidate, "diff": generate_diff_view(reference, candidate, language=language if language in {"python", "java", "javascript", "typescript"} else "python")}
+        data = {
+            "language": language,
+            "reference": reference,
+            "candidate": candidate,
+            "diff": generate_diff_view(reference, candidate, language=language if language in {"python", "java", "javascript", "typescript"} else "python"),
+        }
         judgement: Optional[Dict[str, Any]] = await judge(data)
         if isinstance(judgement, list):
             judgement = judgement[0] if judgement else None
         if judgement is None:
             return 0.0
-        verdict = judgement.get("verdict", "FAIL")
+        verdict = str(judgement.get("verdict", "FAIL")).upper()
         return 1.0 if verdict == "PASS" else 0.0
     return await _gather(process, languages, references, candidates)
 
@@ -44,6 +49,8 @@ def compute_score(data_sources: List[str], solution_strs: List[str], ground_trut
     candidates = [extract_tagged_content(solution_str, tag="updated") or "" for solution_str in solution_strs]
     references = ground_truths
     languages = [(extra_info or {}).get("language", "python") for extra_info in (extra_infos or [{} for _ in references])]
+    if not (len(candidates) == len(references) == len(languages)):
+        raise ValueError("Mismatch in number of candidates, references and languages")
     try:
         return asyncio.run(compute_score_on_batch(languages, references, candidates))
     except RuntimeError:
