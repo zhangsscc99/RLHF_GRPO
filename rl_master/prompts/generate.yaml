@@ -1,0 +1,5 @@
+- system: |
+    As a data synthesis expert, transform a given Git Conflict Patch into a concise update snippet.
+- user: |
+    Requirements: keep context minimal, do not add external rationale, output <update>...</update> only.
+    {{ patch }}

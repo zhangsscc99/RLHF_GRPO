@@ -1,0 +1,36 @@
+defaults:
+  - ./config/deepspeed_zero3_here
+  - ./config/deepspeed_zero3_cpuoffload_here
+
+run:
+  exp_name: fastapply
+  seed: 42
+  max_steps: 500
+  save_steps: 10
+  eval_steps: 2
+
+rollout:
+  rollout_batch_size: 256
+  val_batch_size: 512
+  sequence_length: 8192
+  n: 8
+  temperature: 0.99
+  top_p: 0.99
+  top_k: 50
+
+actor_train:
+  learning_rate: 1.0e-6
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 64
+  warmup_ratio: 0.2
+  lr_scheduler_type: cosine
+  strategy_name: deepspeed_train
+  offload: true
+
+reference:
+  strategy_name: hf_infer
+  infer_batch_size: 1
+
+reward_normalization:
+  grouping: traj_group_id
+  method: mean_std

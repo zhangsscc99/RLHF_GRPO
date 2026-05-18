@@ -1,0 +1,846 @@
+[
+  {
+    "index": 1,
+    "image": "GRPO算法训练_1.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 2,
+    "image": "GRPO算法训练_2.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 3,
+    "image": "GRPO算法训练_3.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 4,
+    "image": "GRPO算法训练_4.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 5,
+    "image": "GRPO算法训练_5.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 6,
+    "image": "GRPO算法训练_6.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 7,
+    "image": "GRPO算法训练_7.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 8,
+    "image": "GRPO算法训练_8.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 9,
+    "image": "GRPO算法训练_9.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 10,
+    "image": "GRPO算法训练_10.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 11,
+    "image": "GRPO算法训练_11.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 12,
+    "image": "GRPO算法训练_12.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 13,
+    "image": "GRPO算法训练_13.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 14,
+    "image": "GRPO算法训练_14.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 15,
+    "image": "GRPO算法训练_15.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 16,
+    "image": "GRPO算法训练_16.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 17,
+    "image": "GRPO算法训练_17.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 18,
+    "image": "GRPO算法训练_18.jpg",
+    "area": "GRPO 训练入口、config、rollout/loss 总览",
+    "reproduction": "复刻为 YAML 配置、run_fastapply_grpo_smoke 离线训练闭环，以及 MinT importance_sampling 入口。",
+    "files": [
+      "rl_master/configs/config-rl-fastapply.yaml",
+      "rl_master/scripts/run_fastapply_grpo_smoke.py",
+      "fastapply_pipeline/train_mint_fastapply_grpo.py"
+    ]
+  },
+  {
+    "index": 19,
+    "image": "GRPO算法训练_19.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 20,
+    "image": "GRPO算法训练_20.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 21,
+    "image": "GRPO算法训练_21.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 22,
+    "image": "GRPO算法训练_22.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 23,
+    "image": "GRPO算法训练_23.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 24,
+    "image": "GRPO算法训练_24.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 25,
+    "image": "GRPO算法训练_25.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 26,
+    "image": "GRPO算法训练_26.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 27,
+    "image": "GRPO算法训练_27.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 28,
+    "image": "GRPO算法训练_28.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 29,
+    "image": "GRPO算法训练_29.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 30,
+    "image": "GRPO算法训练_30.jpg",
+    "area": "FastApply reward/utils/environment",
+    "reproduction": "复刻 score.py、utils.py、FastApply 环境：rule exact -> judge fallback，reward=0.8 correctness+0.2 validity。",
+    "files": [
+      "rl_master/applications/fastapply/reward/score.py",
+      "rl_master/applications/fastapply/reward/utils.py",
+      "rl_master/agent/environment/packages/fastapply/impl.py"
+    ]
+  },
+  {
+    "index": 31,
+    "image": "GRPO算法训练_32.jpg",
+    "area": "Prompt YAML",
+    "reproduction": "复刻 apply/generate/judge 三类 PromptTemplate，保留 <updated> 输出协议。",
+    "files": [
+      "rl_master/prompts/apply.yaml",
+      "rl_master/prompts/generate.yaml",
+      "rl_master/prompts/judge.yaml"
+    ]
+  },
+  {
+    "index": 32,
+    "image": "GRPO算法训练_33.jpg",
+    "area": "Prompt YAML",
+    "reproduction": "复刻 apply/generate/judge 三类 PromptTemplate，保留 <updated> 输出协议。",
+    "files": [
+      "rl_master/prompts/apply.yaml",
+      "rl_master/prompts/generate.yaml",
+      "rl_master/prompts/judge.yaml"
+    ]
+  },
+  {
+    "index": 33,
+    "image": "GRPO算法训练_34.jpg",
+    "area": "Prompt YAML",
+    "reproduction": "复刻 apply/generate/judge 三类 PromptTemplate，保留 <updated> 输出协议。",
+    "files": [
+      "rl_master/prompts/apply.yaml",
+      "rl_master/prompts/generate.yaml",
+      "rl_master/prompts/judge.yaml"
+    ]
+  },
+  {
+    "index": 34,
+    "image": "GRPO算法训练_35.jpg",
+    "area": "Prompt YAML",
+    "reproduction": "复刻 apply/generate/judge 三类 PromptTemplate，保留 <updated> 输出协议。",
+    "files": [
+      "rl_master/prompts/apply.yaml",
+      "rl_master/prompts/generate.yaml",
+      "rl_master/prompts/judge.yaml"
+    ]
+  },
+  {
+    "index": 35,
+    "image": "GRPO算法训练_36.jpg",
+    "area": "Prompt YAML",
+    "reproduction": "复刻 apply/generate/judge 三类 PromptTemplate，保留 <updated> 输出协议。",
+    "files": [
+      "rl_master/prompts/apply.yaml",
+      "rl_master/prompts/generate.yaml",
+      "rl_master/prompts/judge.yaml"
+    ]
+  },
+  {
+    "index": 36,
+    "image": "GRPO算法训练_37.jpg",
+    "area": "Prompt YAML",
+    "reproduction": "复刻 apply/generate/judge 三类 PromptTemplate，保留 <updated> 输出协议。",
+    "files": [
+      "rl_master/prompts/apply.yaml",
+      "rl_master/prompts/generate.yaml",
+      "rl_master/prompts/judge.yaml"
+    ]
+  },
+  {
+    "index": 37,
+    "image": "GRPO算法训练_38.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 38,
+    "image": "GRPO算法训练_39.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 39,
+    "image": "GRPO算法训练_40.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 40,
+    "image": "GRPO算法训练_41.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 41,
+    "image": "GRPO算法训练_42.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 42,
+    "image": "GRPO算法训练_43.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 43,
+    "image": "GRPO算法训练_44.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 44,
+    "image": "GRPO算法训练_45.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 45,
+    "image": "GRPO算法训练_46.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 46,
+    "image": "GRPO算法训练_47.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 47,
+    "image": "GRPO算法训练_48.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 48,
+    "image": "GRPO算法训练_49.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 49,
+    "image": "GRPO算法训练_50.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 50,
+    "image": "GRPO算法训练_51.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 51,
+    "image": "GRPO算法训练_52.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 52,
+    "image": "GRPO算法训练_53.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 53,
+    "image": "GRPO算法训练_54.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 54,
+    "image": "GRPO算法训练_55.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 55,
+    "image": "GRPO算法训练_56.jpg",
+    "area": "Evaluation stack",
+    "reproduction": "复刻 extractor、strategy、agent、pipeline、evalfastapply，支持无 datasets 依赖 smoke。",
+    "files": [
+      "rl_master/agent/evaluation/extractors.py",
+      "rl_master/agent/evaluation/strategies.py",
+      "rl_master/agent/evaluation/agents.py",
+      "rl_master/agent/evaluation/pipeline/evaluator.py",
+      "rl_master/scripts/evaluation/evalfastapply.py"
+    ]
+  },
+  {
+    "index": 56,
+    "image": "GRPO算法训练_57.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 57,
+    "image": "GRPO算法训练_58.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 58,
+    "image": "GRPO算法训练_59.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 59,
+    "image": "GRPO算法训练_60.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 60,
+    "image": "GRPO算法训练_61.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 61,
+    "image": "GRPO算法训练_62.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 62,
+    "image": "GRPO算法训练_63.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 63,
+    "image": "GRPO算法训练_64.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 64,
+    "image": "GRPO算法训练_65.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 65,
+    "image": "GRPO算法训练_66.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 66,
+    "image": "GRPO算法训练_67.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 67,
+    "image": "GRPO算法训练_68.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 68,
+    "image": "GRPO算法训练_69.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 69,
+    "image": "GRPO算法训练_70.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 70,
+    "image": "GRPO算法训练_71.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 71,
+    "image": "GRPO算法训练_72.jpg",
+    "area": "LLM/inference/chat/parser 支撑层",
+    "reproduction": "复刻 LLM wrapper、Inference、PromptTemplate、JSON/pattern parser；无服务时有确定性 fallback 方便跑通。",
+    "files": [
+      "rl_master/agent/common/models/llm.py",
+      "rl_master/agent/common/models/inference.py",
+      "rl_master/agent/common/models/chat/prompt.py",
+      "rl_master/agent/common/models/chat/utils/parser.py"
+    ]
+  },
+  {
+    "index": 72,
+    "image": "Screenshot_20260518_161303_com_xingin_xhs_NoteDetailActivity.jpg",
+    "area": "补充截图/上下文",
+    "reproduction": "用于确认总图集和页面上下文；已在报告中作为第 72 项收录。",
+    "files": [
+      "reports/rl_master_72_image_reproduction_report.md"
+    ]
+  }
+]

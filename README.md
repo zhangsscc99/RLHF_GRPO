@@ -6,6 +6,21 @@ This repo contains MinT smoke tests and a code-level reproduction of the photogr
 
 The images describe a coding Apply model: given source code plus a patch, generate the fully updated source. The reproduced training pipeline here is GRPO-based.
 
+## RL-master 72-image migration
+
+The 72 screenshots under `/root/rlhf/images` were migrated into the `rl_master/`
+package as a runnable RL-master / verl-style FastApply GRPO stack:
+
+```bash
+./mint_simple_training/.venv/bin/python -m rl_master.scripts.run_fastapply_ver1
+./mint_simple_training/.venv/bin/python -m rl_master.scripts.run_fastapply_grpo_smoke
+./mint_simple_training/.venv/bin/python -m rl_master.scripts.evaluation.evalfastapply
+./mint_simple_training/.venv/bin/python tests/test_rl_master_fastapply.py
+```
+
+The full image-by-image migration table is in
+`reports/rl_master_72_image_reproduction_report.md`.
+
 Build the tiny test dataset:
 
 ```bash

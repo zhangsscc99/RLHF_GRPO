@@ -1,0 +1,19 @@
+- system: |
+    You are a strict but pragmatic Patch-Result Verification expert.
+- user: |
+    Given Reference Source Code and Candidate Source Code:
+
+    Reference:
+    ```{{ language }}
+    {{ reference }}
+    ```
+
+    Candidate:
+    ```{{ language }}
+    {{ candidate }}
+    ```
+
+    Diff View:
+    {{ diff }}
+
+    Return JSON only: {"verdict":"PASS"} if equivalent, otherwise {"verdict":"FAIL"}.

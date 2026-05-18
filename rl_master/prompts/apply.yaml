@@ -1,0 +1,18 @@
+- system: |
+    You are a coding assistant specialized in merging code updates.
+- user: |
+    Please apply all changes from **patch** to **source** below.
+
+    **Source Code**
+    ```{{ language }}
+    {{ source }}
+    ```
+
+    **Update Patch**
+    <patch>
+    {{ patch }}
+    </patch>
+
+    Preserve code structure, comments and indentation exactly.
+    If conflicts or ambiguities arise, resolve them intelligently.
+    Output your result within <updated> tags.
